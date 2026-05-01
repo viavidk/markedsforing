@@ -597,38 +597,38 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0" class="cmd-grid">
       <div style="display:flex;flex-direction:column;gap:0">
         <div style="padding:11px 0;border-bottom:1px solid var(--bs);display:flex;gap:16px;align-items:baseline">
-          <span style="font-size:12px;color:var(--ts);min-width:220px">"Det virker" / "jeg er færdig"</span>
-          <span style="font-size:12px;color:var(--tp)">→ Kører pre-commit review automatisk</span>
-        </div>
-        <div style="padding:11px 0;border-bottom:1px solid var(--bs);display:flex;gap:16px;align-items:baseline">
           <span style="font-size:12px;color:var(--ts);min-width:220px">"Vi skal bygge [noget nyt]"</span>
-          <span style="font-size:12px;color:var(--tp)">→ Laver plan, venter på godkendelse</span>
+          <span style="font-size:12px;color:var(--tp)">→ Laver plan, venter p&aring; godkendelse</span>
         </div>
         <div style="padding:11px 0;border-bottom:1px solid var(--bs);display:flex;gap:16px;align-items:baseline">
           <span style="font-size:12px;color:var(--ts);min-width:220px">"Noget virker ikke"</span>
           <span style="font-size:12px;color:var(--tp)">→ Diagnosticerer og retter selv</span>
         </div>
+        <div style="padding:11px 0;border-bottom:1px solid var(--bs);display:flex;gap:16px;align-items:baseline">
+          <span style="font-size:12px;color:var(--ts);min-width:220px">"Tjek at det ser godt ud p&aring; mobil"</span>
+          <span style="font-size:12px;color:var(--tp)">→ frontend-reviewer + accessibility-tester</span>
+        </div>
         <div style="padding:11px 0;display:flex;gap:16px;align-items:baseline">
-          <span style="font-size:12px;color:#10b981;min-width:220px">"Dashboardet er klar" / "vis data"</span>
-          <span style="font-size:12px;color:var(--tp)">→ Kører sanity-check automatisk</span>
+          <span style="font-size:12px;color:var(--ts);min-width:220px">"Er databasen hurtig nok?"</span>
+          <span style="font-size:12px;color:var(--tp)">→ performance-engineer + db-reviewer</span>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:0;padding-left:28px;border-left:1px solid var(--bs)" class="skills-col">
         <div style="padding:11px 0;border-bottom:1px solid var(--bs);display:flex;gap:16px;align-items:baseline">
-          <span style="font-size:12px;color:var(--ts);min-width:160px">Modul er færdigt</span>
-          <span style="font-size:12px;color:var(--tp)">→ Kører review uden at spørge</span>
+          <span style="font-size:12px;color:var(--ts);min-width:160px">"Hvad mangler?"</span>
+          <span style="font-size:12px;color:var(--tp)">→ Opsummerer og foresl&aring;r n&aelig;ste skridt</span>
         </div>
         <div style="padding:11px 0;border-bottom:1px solid var(--bs);display:flex;gap:16px;align-items:baseline">
-          <span style="font-size:12px;color:var(--ts);min-width:160px">"Hvad mangler?"</span>
-          <span style="font-size:12px;color:var(--tp)">→ Opsummerer og foreslår næste skridt</span>
+          <span style="font-size:12px;color:var(--ts);min-width:160px">"Er det sikkert nok?"</span>
+          <span style="font-size:12px;color:var(--tp)">→ security-auditor k&oslash;rer p&aring; koden</span>
         </div>
         <div style="padding:11px 0;border-bottom:1px solid var(--bs);display:flex;gap:16px;align-items:baseline">
           <span style="font-size:12px;color:var(--ts);min-width:160px">Database ikke oprettet</span>
-          <span style="font-size:12px;color:var(--tp)">→ Kører db-init automatisk</span>
+          <span style="font-size:12px;color:var(--tp)">→ K&oslash;rer db-init automatisk</span>
         </div>
         <div style="padding:11px 0;display:flex;gap:16px;align-items:baseline">
-          <span style="font-size:12px;color:#10b981;min-width:160px">Henter API-data</span>
-          <span style="font-size:12px;color:var(--tp)">→ data-integrity-auditor spawner automatisk</span>
+          <span style="font-size:12px;color:var(--ts);min-width:160px">"Det er klar til commit"</span>
+          <span style="font-size:12px;color:var(--tp)">→ Kører /project:review inden push</span>
         </div>
       </div>
     </div>
@@ -704,7 +704,7 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
             <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#10b981">/project:sanity-check</span>
             <button class="cbtn" onclick="copyLine(this,'/project:sanity-check')">Kopiér</button>
           </div>
-          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Verificerer at det dashboard eller den rapport der præsenteres er korrekt: matematisk konsistens, business-plausibilitet og krydscheck mod rå API-data. Returnerer PASS / WARN / CRITICAL per metrik. Blokerer deling ved CRITICAL.</div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Verificerer at data der vises er korrekte: matematisk konsistens, plausibilitet og krydscheck mod r&aring; API-data. Returnerer PASS / WARN / CRITICAL per metrik. Blokerer deling ved CRITICAL.</div>
         </div>
 
         <div style="background:linear-gradient(135deg,rgba(56,189,248,.06),rgba(124,106,240,.03));border:1px solid rgba(56,189,248,.25);border-radius:10px;overflow:hidden">
@@ -727,54 +727,54 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
     </div>
 
     <div>
-      <div style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:16px">Skills · auto-trigger</div>
+      <div style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#a78bfa;margin-bottom:16px">Superpowers · auto-aktiveret</div>
       <div style="display:flex;flex-direction:column;gap:8px">
 
-        <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;overflow:hidden">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--bs)">
-            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--accent)">pre-commit</span>
-            <span style="font-size:11px;color:var(--tm);font-family:'Geist Mono',monospace">auto</span>
+        <div style="background:linear-gradient(135deg,rgba(167,139,250,.07),rgba(167,139,250,.01));border:1px solid rgba(167,139,250,.25);border-radius:10px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(167,139,250,.15)">
+            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#a78bfa">brainstorming</span>
+            <span style="font-size:11px;color:#a78bfa;font-family:'Geist Mono',monospace">Superpowers</span>
           </div>
-          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Trigger: "commit", "klar til commit", "push". K&oslash;rer alle relevante review-agenter (Forge stack + awesome curated), blokerer commit hvis noget er under 8/10, og foresl&aring;r en commit-besked.</div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Aktiveres ved nye features eller &aring;bne sp&oslash;rgsm&aring;l. Tvinger Clarify-fasen inden planlægning starter.</div>
         </div>
 
-        <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;overflow:hidden">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--bs)">
-            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--accent)">security-review</span>
-            <span style="font-size:11px;color:var(--tm);font-family:'Geist Mono',monospace">auto</span>
+        <div style="background:linear-gradient(135deg,rgba(167,139,250,.07),rgba(167,139,250,.01));border:1px solid rgba(167,139,250,.25);border-radius:10px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(167,139,250,.15)">
+            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#a78bfa">writing-plans</span>
+            <span style="font-size:11px;color:#a78bfa;font-family:'Geist Mono',monospace">Superpowers</span>
           </div>
-          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Trigger: &aelig;ndringer til auth, sessions eller API-services. Spawner awesome <span class="mono">security-auditor</span>-agent og blokerer progress ved CRITICAL-fund.</div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Aktiveres n&aring;r Claude skal implementere noget. Skriver en plan og venter p&aring; godkendelse inden kode skrives.</div>
         </div>
 
-        <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;overflow:hidden">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--bs)">
-            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--accent)">deploy</span>
-            <span style="font-size:11px;color:var(--tm);font-family:'Geist Mono',monospace">auto</span>
+        <div style="background:linear-gradient(135deg,rgba(167,139,250,.07),rgba(167,139,250,.01));border:1px solid rgba(167,139,250,.25);border-radius:10px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(167,139,250,.15)">
+            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#a78bfa">systematic-debugging</span>
+            <span style="font-size:11px;color:#a78bfa;font-family:'Geist Mono',monospace">Superpowers</span>
           </div>
-          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Trigger: "klar til produktion", "deploy". Kører review, verificerer .env og outputter deployment-tjekliste.</div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Aktiveres ved fejl. Hyoptes&aelig;tter, tester og eliminerer &mdash; stopper ikke ved f&oslash;rste "m&aring;ske".</div>
         </div>
 
-        <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;overflow:hidden">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--bs)">
-            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--accent)">document</span>
-            <span style="font-size:11px;color:var(--tm);font-family:'Geist Mono',monospace">auto</span>
+        <div style="background:linear-gradient(135deg,rgba(167,139,250,.07),rgba(167,139,250,.01));border:1px solid rgba(167,139,250,.25);border-radius:10px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(167,139,250,.15)">
+            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#a78bfa">red-green-refactor</span>
+            <span style="font-size:11px;color:#a78bfa;font-family:'Geist Mono',monospace">Superpowers</span>
           </div>
-          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Trigger: efter hvert afsluttet modul + trin 1 i pre-commit. Opdaterer PROJECT.md med hvad der faktisk er bygget.</div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Aktiveres ved TDD eller refaktorering. Skriver f&oslash;rst failing test, s&aring; implementation, s&aring; cleanup.</div>
         </div>
 
-        <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;overflow:hidden">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--bs)">
-            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--accent)">ui-ux-pro-max</span>
-            <span style="font-size:11px;color:var(--tm);font-family:'Geist Mono',monospace">auto</span>
+        <div style="background:linear-gradient(135deg,rgba(167,139,250,.07),rgba(167,139,250,.01));border:1px solid rgba(167,139,250,.25);border-radius:10px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(167,139,250,.15)">
+            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#a78bfa">code-reviewer</span>
+            <span style="font-size:11px;color:#a78bfa;font-family:'Geist Mono',monospace">Superpowers</span>
           </div>
-          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Trigger: ved UI/UX-arbejde. 67 design-styles, 96 paletter, 57 font-par. Validerer kontrast, touch-targets og tilgængelighed automatisk.</div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Spawner automatisk som subagent efter implementation er f&aelig;rdig &mdash; reviewer koden inden Claude svarer dig.</div>
         </div>
 
       </div>
 
       <div style="margin-top:16px;background:linear-gradient(135deg,rgba(124,106,240,.06),rgba(232,121,160,.03));border:1px solid rgba(124,106,240,.15);border-radius:10px;padding:16px 18px">
         <div style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:10px">PROJECT.md · din bro til andre AI-systemer</div>
-        <div style="font-size:12px;color:var(--ts);line-height:1.7">Holdes automatisk opdateret af <span style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--accent)">document</span>-skill'en. Claude loader den automatisk. Skifter du til Copilot eller Cursor — se guiden nedenfor.</div>
+        <div style="font-size:12px;color:var(--ts);line-height:1.7">Genereret fra start med skema, routes og arkitekturvalg. Claude opdaterer den l&oslash;bende som del af sin workflow. Skifter du til Copilot eller Cursor &mdash; se guiden nedenfor.</div>
       </div>
 
       <div style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ts);margin-bottom:16px;margin-top:24px">Rules · altid aktive</div>
