@@ -359,23 +359,28 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
   <div class="fgrid stag">
     <div class="lcard">
       <div class="ficon">⚡</div>
-      <div class="fc-title">Selvforbedrende AI-loop</div>
-      <div class="fc-desc">Claude looper til kode, frontend, database, performance, sikkerhed og browser alle er produktionsklare — og validerer data-integritet automatisk ved API-arbejde. Det er ikke en assistent — det er en ingeniør der ikke stopper.</div>
+      <div class="fc-title">Bygger. Tjekker. Retter.</div>
+      <div class="fc-desc">Claude stopper ikke ved f&oslash;rste fungerende implementation. Den k&oslash;rer agents p&aring; koden, finder problemerne, retter dem og k&oslash;rer igen &mdash; indtil code review, security og stack-validering alle er tilfredse. Det er ikke en assistent &mdash; det er en ingeni&oslash;r der ikke stopper.</div>
     </div>
     <div class="lcard" style="background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(167,139,250,.02));border-color:rgba(167,139,250,.3)">
       <div class="ficon" style="background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.3)">🧠</div>
       <div class="fc-title">Superpowers-disciplin</div>
-      <div class="fc-desc">Plugin der tvinger Claude igennem en disciplineret workflow før kode skrives: brainstorming, plan-skabelse, TDD, systematisk debugging og review-mod-plan. 14 skills auto-aktiveret. Sparer 30 minutters debugging for 30 sekunders Clarify.</div>
+      <div class="fc-desc">Plugin der tvinger Claude igennem en struktureret workflow f&oslash;r kode skrives: brainstorming, plan-skabelse, TDD, systematisk debugging og review-mod-plan. 6 skills auto-aktiveret. Sp&aelig;rrer for "skriv bare noget kode" &mdash; tvinger Clarify f&oslash;rst.</div>
+    </div>
+    <div class="lcard" style="background:linear-gradient(135deg,rgba(251,191,36,.06),rgba(248,113,113,.04));border-color:rgba(251,191,36,.25)">
+      <div class="ficon" style="background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.3)">🪝</div>
+      <div class="fc-title">Automatiske hooks</div>
+      <div class="fc-desc">Tre hooks k&oslash;rer uden du sp&oslash;rger. Hvert .php-filgem validerer syntax og sender security-notice ved auth-filer. <span style="font-family:'Geist Mono',monospace;font-size:11px">git commit</span> blokeres automatisk ved syntaksfejl. Session-afslutning printer rapport med review-anbefalinger.</div>
     </div>
     <div class="lcard">
       <div class="ficon">🔀</div>
       <div class="fc-title">Komplet AI-dækning</div>
-      <div class="fc-desc">Code review, security audit, performance, accessibility og PHP/SQLite stack-validering er installeret og konfigureret automatisk. Du beskriver hvad du vil bygge &mdash; Claude bruger de rigtige capabilities uden at du skal vælge eller koordinere.</div>
+      <div class="fc-desc">Code review, security audit, performance, accessibility og PHP/SQLite stack-validering er installeret og konfigureret automatisk. Du beskriver hvad du vil bygge &mdash; Claude bruger de rigtige capabilities uden at du skal v&aelig;lge eller koordinere.</div>
     </div>
     <div class="lcard">
       <div class="ficon">🌍</div>
       <div class="fc-title">Taler dit sprog. Handler selv.</div>
-      <div class="fc-desc">Claude svarer på det sprog du skriver på — dansk, svensk, norsk, finsk eller engelsk. Du behøver ikke kende kommandoerne — beskriv hvad du vil, Claude oversætter det til handling.</div>
+      <div class="fc-desc">Claude svarer p&aring; det sprog du skriver p&aring; &mdash; dansk, svensk, norsk, finsk eller engelsk. Du beh&oslash;ver ikke kende kommandoerne &mdash; beskriv hvad du vil, Claude overss&aelig;tter det til handling.</div>
     </div>
     <div class="lcard" style="background:linear-gradient(135deg,rgba(124,106,240,.1),rgba(232,121,160,.06));border-color:rgba(124,106,240,.3);position:relative;overflow:hidden">
       <div style="position:absolute;top:-12px;right:-12px;display:flex;gap:4px;opacity:.18;pointer-events:none">
@@ -412,10 +417,10 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
         <div style="width:22px;height:22px;border-radius:5px;background:#3ecf8e"></div>
       </div>
       <div class="ficon" style="background:rgba(56,189,248,.12);border-color:rgba(56,189,248,.3)">🎨</div>
-      <div class="fc-title">69 Awesome DESIGN.md</div>
-      <div class="fc-desc" style="margin-bottom:12px">Vælg design system fra verdens bedste produkter — Apple, Stripe, Linear, Shopify og 65 andre. Drop én fil i projektet, Claude bygger UI der matcher præcis den stil.</div>
+      <div class="fc-title">31 Awesome DESIGN.md</div>
+      <div class="fc-desc" style="margin-bottom:12px">V&aelig;lg design system fra verdens bedste produkter &mdash; Apple, Stripe, Linear, Shopify og 28 andre. Drop &eacute;n fil i projektet, Claude bygger UI der matcher pr&aelig;cis den stil.</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
-        <div style="background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2);border-radius:6px;padding:4px 10px;font-size:11px;font-family:'Geist Mono',monospace;color:var(--accent2)">69 systemer</div>
+        <div style="background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2);border-radius:6px;padding:4px 10px;font-size:11px;font-family:'Geist Mono',monospace;color:var(--accent2)">31 systemer</div>
         <div style="background:rgba(124,106,240,.1);border:1px solid rgba(124,106,240,.2);border-radius:6px;padding:4px 10px;font-size:11px;font-family:'Geist Mono',monospace;color:var(--brand)">light + dark</div>
         <div style="background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);border-radius:6px;padding:4px 10px;font-size:11px;font-family:'Geist Mono',monospace;color:var(--ok)">npx install</div>
       </div>
@@ -448,20 +453,10 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
       <div class="fc-title">Apache-klar stack</div>
       <div class="fc-desc">PHP/SQLite med korrekte .htaccess-filer, PSR-4 autoload, .gitignore, .editorconfig og Composer klar fra start.</div>
     </div>
-    <div class="lcard" style="border-color:rgba(16,185,129,.25);background:linear-gradient(135deg,rgba(16,185,129,.06),rgba(56,189,248,.03))">
-      <div class="ficon" style="background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.25)">🔢</div>
-      <div class="fc-title" style="color:#10b981">Data-integritet · sanity check</div>
-      <div class="fc-desc">Validerer data fra Criteo, Meta, Google Ads og GA4 inden aggregering. Verificerer valuta, tidszoner, attributionsvindue og null vs. zero. Kører sanity-check på færdige dashboards og blokerer deling ved CRITICAL-fund.</div>
-    </div>
-    <div class="lcard">
-      <div class="ficon">🗜️</div>
-      <div class="fc-title">TOON format</div>
-      <div class="fc-desc">Token-Oriented Object Notation til al AI-intern kommunikation. Reducerer token-forbrug med ~40% og giver Claude præcisere kontekst.</div>
-    </div>
     <div class="lcard">
       <div class="ficon">📋</div>
       <div class="fc-title">Levende dokumentation</div>
-      <div class="fc-desc">PROJECT.md opdateres automatisk efter hvert modul. Claude, Copilot og Cursor læser den via @PROJECT.md i CLAUDE.md — skifter du AI-system mister du ingen kontekst.</div>
+      <div class="fc-desc">PROJECT.md er genereret fra start med skema, routes og arkitekturbeslutninger. Claude opdaterer den l&oslash;bende som en del af sin workflow &mdash; skifter du AI-system mister du ingen kontekst.</div>
     </div>
   </div>
 </section>
