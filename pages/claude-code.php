@@ -69,7 +69,7 @@
       </div>
       <div class="lcard">
         <div class="ficon">🔓</div>
-        <div class="card-title"><span class="cc-cmd">/less-permission-prompts</span> <span class="cc-badge bbrand">ny</span> <button class="cbtn" onclick="copyCmd(this,'/less-permission-prompts')">Kopiér</button></div>
+        <div class="card-title"><span class="cc-cmd">/fewer-permission-prompts</span> <span class="cc-badge bbrand">ny</span> <button class="cbtn" onclick="copyCmd(this,'/fewer-permission-prompts')">Kopiér</button></div>
         <p class="card-desc">Claude lærer hvad du altid siger ja til, og holder op med at spørge om det.
           Men den spørger stadig når noget kunne være farligt.</p>
       </div>
