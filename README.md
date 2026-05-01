@@ -4,14 +4,10 @@ Marketing-siden for [ViaVi Forge](https://github.com/viavidk/forge) — PHP-scaf
 
 ## Installér / opdatér
 
+Gå til den mappe filen skal ligge i, og kør:
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/viavidk/markedsforing/main/update.sh | bash
-```
-
-Standard installationsmappe: `~/markedsforing`. Tilpas med env-variabel:
-
-```bash
-MARKEDSFORING_DIR=/var/www/markedsforing curl -fsSL https://raw.githubusercontent.com/viavidk/markedsforing/main/update.sh | bash
 ```
 
 Scriptet gør `git clone` første gang og `git pull` ved efterfølgende kørsler.
