@@ -548,12 +548,12 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
       </div>
     </div>
 
-    <div style="background:linear-gradient(135deg,rgba(232,121,160,.08),rgba(232,121,160,.02));border:1px solid rgba(232,121,160,.3);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start" class="fu2" style="transition-delay:.07s">
+    <div style="background:linear-gradient(135deg,rgba(232,121,160,.08),rgba(232,121,160,.02));border:1px solid rgba(232,121,160,.3);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start" class="fu2">
       <div style="width:44px;height:44px;background:rgba(232,121,160,.12);border:1px solid rgba(232,121,160,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">🔐</div>
       <div>
-        <div style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:6px">Security &amp; DB-notifikationer</div>
-        <div style="font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:10px">Redigerer du login.php, AuthController eller session-kode? Claude advares automatisk og opfordres til at køre security-auditor. Ændrer du et schema eller en migration? db-reviewer-anbefalingen sendes straks.</div>
-        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent)">PostToolUse: auth/session/schema &rarr; NOTICE til Claude &rarr; proaktiv review</div>
+        <div style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:6px">Security-notifikationer</div>
+        <div style="font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:10px">Redigerer du <span class="mono">login.php</span>, <span class="mono">AuthController</span>, <span class="mono">session</span>- eller <span class="mono">password</span>-filer? Claude adviseres automatisk om at filen er sikkerhedskritisk og opfordres til at k&oslash;re security-auditor p&aring; &aelig;ndringen.</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent)">PostToolUse: auth/login/session/password &rarr; SECURITY NOTICE til Claude</div>
       </div>
     </div>
 
@@ -563,6 +563,17 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
         <div style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:6px">Commit-gate</div>
         <div style="font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:10px">Staged PHP-filer valideres automatisk f&oslash;r <span class="mono">git commit</span> k&oslash;rer. Syntaksfejl blokerer commit'et &mdash; Claude ser blokeringsgrunden, retter koden og fors&oslash;ger igen. Ingen fejlbeh&aelig;ftet kode n&aring;r din git-historik.</div>
         <div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent2)">PreToolUse: git commit &rarr; php -l staged files &rarr; deny med fejlbesked</div>
+      </div>
+    </div>
+
+  </div>
+
+    <div style="background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(52,211,153,.02));border:1px solid rgba(52,211,153,.3);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start" class="fu2">
+      <div style="width:44px;height:44px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">📋</div>
+      <div>
+        <div style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:6px">Session-rapport</div>
+        <div style="font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:10px">N&aring;r Claude Code-sessionen afsluttes printes en rapport direkte i terminalen &mdash; hvilke filer der er &aelig;ndret, om der er auth- eller sikkerhedskritiske filer blandt dem, og hvilke reviews der anbefales inden commit.</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#34d399">Stop: session-afslutning &rarr; &aelig;ndrede filer + review-anbefalinger &rarr; terminal</div>
       </div>
     </div>
 
