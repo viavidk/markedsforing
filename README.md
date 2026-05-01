@@ -1,6 +1,20 @@
-# ViaVi Forge — Marketing Site
+# ViaVi Forge — Marketing Site · v1.0.0
 
 Marketing-siden for [ViaVi Forge](https://github.com/viavidk/forge) — PHP-scaffolderen til Claude Code-projekter.
+
+## Installér / opdatér
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/viavidk/markedsforing/main/update.sh | bash
+```
+
+Standard installationsmappe: `~/markedsforing`. Tilpas med env-variabel:
+
+```bash
+MARKEDSFORING_DIR=/var/www/markedsforing curl -fsSL https://raw.githubusercontent.com/viavidk/markedsforing/main/update.sh | bash
+```
+
+Scriptet gør `git clone` første gang og `git pull` ved efterfølgende kørsler.
 
 ## Sider
 
@@ -36,8 +50,15 @@ index.php        # Router — ?page= parameter
 
 ## Version
 
-Opdatér `config.php` når Forge får ny version:
+| Konstant | Betydning |
+|---|---|
+| `SITE_VERSION` | Marketingsidens egen version |
+| `FORGE_VERSION` | Hvilken Forge-version siden omtaler |
+| `UIUX_VERSION` | UI/UX Pro Max-version |
+
+Opdatér `config.php` når Forge eller siden får ny version:
 
 ```php
+const SITE_VERSION  = '1.0.0';
 const FORGE_VERSION = '3.6.6';
 ```
