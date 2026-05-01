@@ -566,8 +566,6 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
       </div>
     </div>
 
-  </div>
-
     <div style="background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(52,211,153,.02));border:1px solid rgba(52,211,153,.3);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start" class="fu2">
       <div style="width:44px;height:44px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">📋</div>
       <div>
