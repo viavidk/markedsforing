@@ -469,7 +469,7 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
   <h2 class="sec-h2 fu2" style="transition-delay:.07s">Claude kender<br><span class="gsu">din stack.</span></h2>
   <p class="sec-lead fu2" style="transition-delay:.14s">Workflow-disciplin, code-review, security-audit og stack-specifik validering installeres automatisk. Intet at vælge, intet at koordinere &mdash; skriv hvad du vil bygge og det rigtige sker.</p>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px" class="fu2">
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:48px" class="fu2">
 
     <!-- WORKFLOW -->
     <div style="background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(167,139,250,.02));border:1px solid rgba(167,139,250,.3);border-radius:12px;padding:24px 26px">
@@ -481,7 +481,7 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
         <li style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--ts)">executing-plans</li>
         <li style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--ts)">systematic-debugging</li>
         <li style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--ts)">red-green-refactor</li>
-        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#a78bfa">code-review (automatisk)</li>
+        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#a78bfa">code-reviewer (automatisk)</li>
       </ul>
     </div>
 
@@ -510,10 +510,22 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
         <li style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--ts)">mcp-health-check</li>
       </ul>
     </div>
+
+    <!-- AUTOMATISKE HOOKS -->
+    <div style="background:linear-gradient(135deg,rgba(251,191,36,.07),rgba(248,113,113,.04));border:1px solid rgba(251,191,36,.3);border-radius:12px;padding:24px 26px">
+      <h4 style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:4px">Automatiske hooks</h4>
+      <p style="font-size:13px;color:var(--tm);line-height:1.6;margin-bottom:18px">K&oslash;rer uden bruger-handling &mdash; Claude Code-event-systemet trigger dem direkte ved filskrivning, bash og session-afslutning.</p>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px">
+        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#fbbf24">post-write <span style="color:var(--ts);font-family:inherit">— PHP-lint + security-notice ved auth-filer</span></li>
+        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#f87171">pre-bash <span style="color:var(--ts);font-family:inherit">— blokerer git commit ved syntaksfejl</span></li>
+        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#34d399">stop <span style="color:var(--ts);font-family:inherit">— session-rapport med review-anbefalinger</span></li>
+      </ul>
+    </div>
+
   </div>
 
   <div style="margin-top:20px;background:rgba(124,106,240,.04);border:1px solid rgba(124,106,240,.15);border-radius:10px;padding:14px 22px;font-size:13px;color:var(--ts);line-height:1.7" class="fu2">
-    Tilf&oslash;j flere: <span class="mono">forge agents search &lt;ord&gt;</span> finder blandt 100+ tilg&aelig;ngelige agents.
+    Tilf&oslash;j flere agents: <span class="mono">forge agents search &lt;ord&gt;</span> finder blandt 100+ tilg&aelig;ngelige agents.
   </div>
 </section>
 
