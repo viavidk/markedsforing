@@ -271,49 +271,80 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
 <!-- ═══════════════════════════════ HVORFOR ══════════════════════════ -->
 <section class="sec" id="hvorfor">
   <span class="sec-tag fu2">Historien bag</span>
-  <h2 class="sec-h2 fu2" style="transition-delay:.07s">Vi er trætte af at starte forfra.</h2>
-  <p class="sec-lead fu2" style="transition-delay:.14s">Hvert nyt projekt starter med de samme 4 timer: mappestruktur, database-opsætning, login-system, CSRF-tokens, .htaccess og Claude-instruktioner. Det er spildtid. Forge eliminerer det.</p>
+  <h2 class="sec-h2 fu2" style="transition-delay:.07s">Mere end et scaffold-tool.</h2>
+  <p class="sec-lead fu2" style="transition-delay:.14s">Forge giver Claude hukommelse om din stack, disciplin til at t&aelig;nke f&oslash;r den koder &mdash; og tre automatiske hooks der k&oslash;rer uden du sp&oslash;rger. Det er ikke et starterkit. Det er en ingeni&oslash;r der aldrig sover.</p>
 
   <div class="stats fu2" style="transition-delay:.2s">
     <div class="stat">
       <div class="sv"><span class="gb">10s</span></div>
-      <div class="sl">Fra <span class="mono">forge</span>-kommando til k&oslash;rende projekt i Hurtigt mode</div>
+      <div class="sl">Fra <span class="mono">forge</span>-kommando til k&oslash;rende projekt med fuld AI-stack</div>
     </div>
     <div class="stat">
       <div class="sv"><span class="gb">3</span></div>
-      <div class="sl">Orkestrerede agent-kilder &mdash; Superpowers, awesome curated og Forge stack &mdash; uden overlap</div>
+      <div class="sl">Automatiske hooks &mdash; PHP-lint, security-notices og commit-gate &mdash; uden bruger-handling</div>
     </div>
     <div class="stat">
       <div class="sv"><span class="gb">0</span></div>
-      <div class="sl">Dubletter &mdash; hver kilde ejer sit eget dom&aelig;ne, ingen modarbejdelse</div>
+      <div class="sl">Dubletter p&aring; tv&aelig;rs af alle agent-systemer &mdash; verificeret ved hvert build</div>
     </div>
   </div>
 
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:24px" class="fu2">
-    <div style="background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(167,139,250,.02));border:1px solid rgba(167,139,250,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:#a78bfa;margin-bottom:3px">Superpowers</div><div style="font-size:11px;color:var(--tm)">Workflow-disciplin: Clarify &rarr; Design &rarr; Plan &rarr; Code &rarr; Verify</div></div>
-      <span style="font-size:10px;color:#a78bfa;font-family:'Geist Mono',monospace;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">plugin</span>
+
+    <!-- Superpowers -->
+    <div style="background:linear-gradient(135deg,rgba(167,139,250,.1),rgba(167,139,250,.02));border:1px solid rgba(167,139,250,.35);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#a78bfa;margin-bottom:3px">Superpowers</div>
+        <div style="font-size:11px;color:var(--tm)">Clarify &rarr; Design &rarr; Plan &rarr; Code &rarr; Verify &mdash; tvinger Claude til at t&aelig;nke f&oslash;r den koder</div>
+      </div>
+      <span style="font-size:10px;color:#a78bfa;font-family:'Geist Mono',monospace;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);padding:2px 8px;border-radius:5px;flex-shrink:0">plugin</span>
     </div>
-    <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:3px">pre-commit</div><div style="font-size:11px;color:var(--tm)">Trigger: "commit" / "push" &mdash; k&oslash;rer alle review-agenter</div></div>
-      <span style="font-size:10px;color:var(--tm);font-family:'Geist Mono',monospace;background:var(--elevated);border:1px solid var(--bd);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
+
+    <!-- PostToolUse hook -->
+    <div style="background:linear-gradient(135deg,rgba(251,191,36,.07),rgba(251,191,36,.01));border:1px solid rgba(251,191,36,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#fbbf24;margin-bottom:3px">post-write hook</div>
+        <div style="font-size:11px;color:var(--tm)">Hvert .php-filgem: syntax-tjek + auth-filer sender security-notice direkte til Claude</div>
+      </div>
+      <span style="font-size:10px;color:#fbbf24;font-family:'Geist Mono',monospace;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
     </div>
-    <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:3px">security-review</div><div style="font-size:11px;color:var(--tm)">Trigger: &aelig;ndringer i auth eller API &mdash; blokerer ved CRITICAL</div></div>
-      <span style="font-size:10px;color:var(--tm);font-family:'Geist Mono',monospace;background:var(--elevated);border:1px solid var(--bd);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
+
+    <!-- PreToolUse hook -->
+    <div style="background:linear-gradient(135deg,rgba(248,113,113,.07),rgba(248,113,113,.01));border:1px solid rgba(248,113,113,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#f87171;margin-bottom:3px">pre-bash hook</div>
+        <div style="font-size:11px;color:var(--tm)">git commit blokeres automatisk hvis staged PHP-filer har syntaksfejl &mdash; Claude ser grunden og retter</div>
+      </div>
+      <span style="font-size:10px;color:#f87171;font-family:'Geist Mono',monospace;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
     </div>
-    <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:3px">document</div><div style="font-size:11px;color:var(--tm)">Trigger: efter hvert modul &mdash; holder PROJECT.md opdateret</div></div>
-      <span style="font-size:10px;color:var(--tm);font-family:'Geist Mono',monospace;background:var(--elevated);border:1px solid var(--bd);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
+
+    <!-- Stop hook -->
+    <div style="background:linear-gradient(135deg,rgba(52,211,153,.07),rgba(52,211,153,.01));border:1px solid rgba(52,211,153,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#34d399;margin-bottom:3px">stop hook</div>
+        <div style="font-size:11px;color:var(--tm)">Session-afslutning printer rapport i terminalen &mdash; hvad der er &aelig;ndret, hvad der b&oslash;r reviewes</div>
+      </div>
+      <span style="font-size:10px;color:#34d399;font-family:'Geist Mono',monospace;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
     </div>
-    <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--accent);margin-bottom:3px">deploy</div><div style="font-size:11px;color:var(--tm)">Trigger: "klar til produktion" &mdash; tjekliste inden go-live</div></div>
-      <span style="font-size:10px;color:var(--tm);font-family:'Geist Mono',monospace;background:var(--elevated);border:1px solid var(--bd);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
+
+    <!-- Awesome curated agents -->
+    <div style="background:linear-gradient(135deg,rgba(56,189,248,.07),rgba(56,189,248,.01));border:1px solid rgba(56,189,248,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#38bdf8;margin-bottom:3px">curated agents</div>
+        <div style="font-size:11px;color:var(--tm)">code-reviewer, security-auditor, performance-engineer + type-specifikke &mdash; installeres automatisk</div>
+      </div>
+      <span style="font-size:10px;color:#38bdf8;font-family:'Geist Mono',monospace;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">agent</span>
     </div>
-    <div style="background:linear-gradient(135deg,rgba(16,185,129,.07),rgba(56,189,248,.04));border:1px solid rgba(16,185,129,.25);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-      <div><div style="font-family:'Geist Mono',monospace;font-size:12px;color:#10b981;margin-bottom:3px">data-integrity-auditor</div><div style="font-size:11px;color:var(--tm)">Forge-stack agent &mdash; sanity-check ved API-data</div></div>
+
+    <!-- Forge stack -->
+    <div style="background:linear-gradient(135deg,rgba(16,185,129,.07),rgba(16,185,129,.01));border:1px solid rgba(16,185,129,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#10b981;margin-bottom:3px">Forge stack</div>
+        <div style="font-size:11px;color:var(--tm)">frontend-reviewer, db-reviewer, data-integrity-auditor &mdash; kender PHP/SQLite/Tailwind-konventionerne</div>
+      </div>
       <span style="font-size:10px;color:#10b981;font-family:'Geist Mono',monospace;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">agent</span>
     </div>
+
   </div>
 </section>
 
