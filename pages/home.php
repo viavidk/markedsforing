@@ -384,7 +384,7 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
     <div class="lcard" style="background:linear-gradient(135deg,rgba(52,211,153,.06),rgba(56,189,248,.03));border-color:rgba(52,211,153,.25)">
       <div class="ficon" style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3)">🩺</div>
       <div class="fc-title">forge doctor</div>
-      <div class="fc-desc">K&oslash;r <span style="font-family:'Geist Mono',monospace;font-size:11px">forge doctor</span> for at verificere at alt er i orden: PHP-version, composer, git, sqlite3, hooks, settings.json, CLAUDE.md, .env og database. Printer ✓/⚠/✗ per check. CI-kompatibel exit code.</div>
+      <div class="fc-desc">K&oslash;r <span style="font-family:'Geist Mono',monospace;font-size:11px">forge doctor</span> for et komplet helbredstjek: systemmilj&oslash; (PHP, composer, git, sqlite3, node, cloudflared) + projekt (hooks, Superpowers, agents, skills, MCPs, CLAUDE.md, DESIGN.md, .env, database). Printer ✓/⚠/ℹ/✗ per check med installationsvejledning ved fejl.</div>
     </div>
     <div class="lcard">
       <div class="ficon">🔀</div>
@@ -750,7 +750,7 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
             <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#34d399">forge doctor</span>
             <button class="cbtn" onclick="copyLine(this,'forge doctor')">Kopiér</button>
           </div>
-          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Helbredstjek af Forge-installationen: PHP 8.1+, composer, git, sqlite3, hooks, settings.json, CLAUDE.md, .env og database. Printer ✓/⚠/✗ per check. CI-kompatibel &mdash; exit code 1 ved fejl.</div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">16 checks i to sektioner &mdash; <strong>Systemmilj&oslash;:</strong> PHP, composer (med installationskommando), git, sqlite3, node/npx, cloudflared &mdash; <strong>Projekt:</strong> hooks (4/4), Superpowers, agents, skills, MCP-servere (Context7/Chrome/ViaVi), CLAUDE.md, DESIGN.md, .env, database. ✓/⚠/ℹ/✗ pr. check.</div>
         </div>
 
         <div style="background:linear-gradient(135deg,rgba(56,189,248,.07),rgba(124,106,240,.03));border:1px solid rgba(56,189,248,.25);border-radius:10px;overflow:hidden">
