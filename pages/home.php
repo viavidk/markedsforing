@@ -272,7 +272,7 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
 <section class="sec" id="hvorfor">
   <span class="sec-tag fu2">Historien bag</span>
   <h2 class="sec-h2 fu2" style="transition-delay:.07s">Mere end et scaffold-tool.</h2>
-  <p class="sec-lead fu2" style="transition-delay:.14s">Forge giver Claude hukommelse om din stack, disciplin til at t&aelig;nke f&oslash;r den koder &mdash; og tre automatiske hooks der k&oslash;rer uden du sp&oslash;rger. Det er ikke et starterkit. Det er en ingeni&oslash;r der aldrig sover.</p>
+  <p class="sec-lead fu2" style="transition-delay:.14s">Forge giver Claude hukommelse om din stack, disciplin til at t&aelig;nke f&oslash;r den koder &mdash; og fire automatiske hooks der k&oslash;rer uden du sp&oslash;rger. Det er ikke et starterkit. Det er en ingeni&oslash;r der aldrig sover.</p>
 
   <div class="stats fu2" style="transition-delay:.2s">
     <div class="stat">
@@ -280,8 +280,8 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
       <div class="sl">Fra <span class="mono">forge</span>-kommando til k&oslash;rende projekt med fuld AI-stack</div>
     </div>
     <div class="stat">
-      <div class="sv"><span class="gb">3</span></div>
-      <div class="sl">Automatiske hooks &mdash; PHP-lint, security-notices og commit-gate &mdash; uden bruger-handling</div>
+      <div class="sv"><span class="gb">4</span></div>
+      <div class="sl">Automatiske hooks &mdash; PHP-lint + test runner, security-notices, commit-gate og session-audit &mdash; uden bruger-handling</div>
     </div>
     <div class="stat">
       <div class="sv"><span class="gb">0</span></div>
@@ -304,7 +304,7 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
     <div style="background:linear-gradient(135deg,rgba(251,191,36,.07),rgba(251,191,36,.01));border:1px solid rgba(251,191,36,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
       <div>
         <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#fbbf24;margin-bottom:3px">post-write hook</div>
-        <div style="font-size:11px;color:var(--tm)">Hvert .php-filgem: syntax-tjek + auth-filer sender security-notice direkte til Claude</div>
+        <div style="font-size:11px;color:var(--tm)">Hvert .php-filgem: syntax-tjek + composer test + auth-filer sender security-notice direkte til Claude</div>
       </div>
       <span style="font-size:10px;color:#fbbf24;font-family:'Geist Mono',monospace;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
     </div>
@@ -322,9 +322,18 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
     <div style="background:linear-gradient(135deg,rgba(52,211,153,.07),rgba(52,211,153,.01));border:1px solid rgba(52,211,153,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
       <div>
         <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#34d399;margin-bottom:3px">stop hook</div>
-        <div style="font-size:11px;color:var(--tm)">Session-afslutning printer rapport i terminalen &mdash; hvad der er &aelig;ndret, hvad der b&oslash;r reviewes</div>
+        <div style="font-size:11px;color:var(--tm)">Session-afslutning skriver <span style="font-family:'Geist Mono',monospace">sessions/DRAFT.md</span> med git-data og printer rapport med review-anbefalinger</div>
       </div>
       <span style="font-size:10px;color:#34d399;font-family:'Geist Mono',monospace;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
+    </div>
+
+    <!-- Session-start hook -->
+    <div style="background:linear-gradient(135deg,rgba(56,189,248,.07),rgba(56,189,248,.01));border:1px solid rgba(56,189,248,.3);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#38bdf8;margin-bottom:3px">session-start hook</div>
+        <div style="font-size:11px;color:var(--tm)">Ny Claude-session? Forrige sessions DRAFT.md injiceres automatisk som kontekst &mdash; Claude husker hvad der skete sidst</div>
+      </div>
+      <span style="font-size:10px;color:#38bdf8;font-family:'Geist Mono',monospace;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.25);padding:2px 8px;border-radius:5px;flex-shrink:0">auto</span>
     </div>
 
     <!-- Awesome curated agents -->
@@ -370,7 +379,12 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
     <div class="lcard" style="background:linear-gradient(135deg,rgba(251,191,36,.06),rgba(248,113,113,.04));border-color:rgba(251,191,36,.25)">
       <div class="ficon" style="background:rgba(251,191,36,.12);border-color:rgba(251,191,36,.3)">🪝</div>
       <div class="fc-title">Automatiske hooks</div>
-      <div class="fc-desc">Tre hooks k&oslash;rer uden du sp&oslash;rger. Hvert .php-filgem validerer syntax og sender security-notice ved auth-filer. <span style="font-family:'Geist Mono',monospace;font-size:11px">git commit</span> blokeres automatisk ved syntaksfejl. Session-afslutning printer rapport med review-anbefalinger.</div>
+      <div class="fc-desc">Fire hooks k&oslash;rer uden du sp&oslash;rger. Hvert .php-filgem validerer syntax, k&oslash;rer <span style="font-family:'Geist Mono',monospace;font-size:11px">composer test</span> og sender security-notice ved auth-filer. <span style="font-family:'Geist Mono',monospace;font-size:11px">git commit</span> blokeres automatisk ved syntaksfejl. Session-afslutning skriver <span style="font-family:'Geist Mono',monospace;font-size:11px">DRAFT.md</span> med &aelig;ndringsoversigt &mdash; og n&aelig;ste session f&aring;r konteksten automatisk.</div>
+    </div>
+    <div class="lcard" style="background:linear-gradient(135deg,rgba(52,211,153,.06),rgba(56,189,248,.03));border-color:rgba(52,211,153,.25)">
+      <div class="ficon" style="background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3)">🩺</div>
+      <div class="fc-title">forge doctor</div>
+      <div class="fc-desc">K&oslash;r <span style="font-family:'Geist Mono',monospace;font-size:11px">forge doctor</span> for at verificere at alt er i orden: PHP-version, composer, git, sqlite3, hooks, settings.json, CLAUDE.md, .env og database. Printer ✓/⚠/✗ per check. CI-kompatibel exit code.</div>
     </div>
     <div class="lcard">
       <div class="ficon">🔀</div>
@@ -446,7 +460,7 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
     <div class="lcard">
       <div class="ficon">🔒</div>
       <div class="fc-title">Produktion fra dag 1</div>
-      <div class="fc-desc">bcrypt, CSRF-tokens, prepared statements, session hardening og secrets i .env — sat op fra første linje kode. Deployment til Apache er en tjekliste.</div>
+      <div class="fc-desc">bcrypt, CSRF-tokens, prepared statements, session hardening og secrets i .env &mdash; sat op fra f&oslash;rste linje kode. <span style="font-family:'Geist Mono',monospace;font-size:11px">.env.example</span> genereres automatisk med alle standard Forge-variabler. Deployment til Apache er en tjekliste.</div>
     </div>
     <div class="lcard">
       <div class="ficon">📦</div>
@@ -516,9 +530,10 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
       <h4 style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:4px">Automatiske hooks</h4>
       <p style="font-size:13px;color:var(--tm);line-height:1.6;margin-bottom:18px">K&oslash;rer uden bruger-handling &mdash; Claude Code-event-systemet trigger dem direkte ved filskrivning, bash og session-afslutning.</p>
       <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px">
-        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#fbbf24">post-write <span style="color:var(--ts);font-family:inherit">— PHP-lint + security-notice ved auth-filer</span></li>
+        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#fbbf24">post-write <span style="color:var(--ts);font-family:inherit">— PHP-lint + composer test + security-notice</span></li>
         <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#f87171">pre-bash <span style="color:var(--ts);font-family:inherit">— blokerer git commit ved syntaksfejl</span></li>
-        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#34d399">stop <span style="color:var(--ts);font-family:inherit">— session-rapport med review-anbefalinger</span></li>
+        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#34d399">stop <span style="color:var(--ts);font-family:inherit">— skriver DRAFT.md + session-rapport</span></li>
+        <li style="font-family:'Geist Mono',monospace;font-size:12px;color:#38bdf8">session-start <span style="color:var(--ts);font-family:inherit">— injecterer forrige sessions kontekst</span></li>
       </ul>
     </div>
 
@@ -569,9 +584,18 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
     <div style="background:linear-gradient(135deg,rgba(52,211,153,.08),rgba(52,211,153,.02));border:1px solid rgba(52,211,153,.3);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start" class="fu2">
       <div style="width:44px;height:44px;background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">📋</div>
       <div>
-        <div style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:6px">Session-rapport</div>
-        <div style="font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:10px">N&aring;r Claude Code-sessionen afsluttes printes en rapport direkte i terminalen &mdash; hvilke filer der er &aelig;ndret, om der er auth- eller sikkerhedskritiske filer blandt dem, og hvilke reviews der anbefales inden commit.</div>
-        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#34d399">Stop: session-afslutning &rarr; &aelig;ndrede filer + review-anbefalinger &rarr; terminal</div>
+        <div style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:6px">Session-audit</div>
+        <div style="font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:10px">N&aring;r Claude Code-sessionen afsluttes skrives <span class="mono">sessions/DRAFT.md</span> med git-data (hvilke filer &aelig;ndret, auth-hits, schema-hits) og en rapport printes i terminalen med review-anbefalinger. N&aelig;ste gang du &aring;bner projektet l&aelig;ser session-start hook DRAFT.md og giver Claude konteksten &mdash; ingen tabt tr&aring;d.</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#34d399">Stop &rarr; sessions/DRAFT.md &nbsp;·&nbsp; SessionStart &rarr; additionalContext til Claude</div>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,rgba(124,106,240,.08),rgba(124,106,240,.02));border:1px solid rgba(124,106,240,.3);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start" class="fu2">
+      <div style="width:44px;height:44px;background:rgba(124,106,240,.12);border:1px solid rgba(124,106,240,.3);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px">🧪</div>
+      <div>
+        <div style="font-size:17px;font-weight:600;color:var(--tp);margin-bottom:6px">Test runner efter hvert gem</div>
+        <div style="font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:10px">Har projektet et <span class="mono">composer test</span>-script, k&oslash;res det automatisk efter hvert .php-filgem. Fejlende tests sendes som <span class="mono">additionalContext</span> til Claude &mdash; den retter dem inden du ser n&aelig;ste svar. Ingen separat terminal, ingen manuel <span class="mono">composer test</span>.</div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--brand)">PostToolUse: app/*.php &rarr; composer test &rarr; additionalContext ved fejl</div>
       </div>
     </div>
 
@@ -718,7 +742,31 @@ echo "✓ Config skrevet til: $CONFIG_DIR"</pre>
             <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#a78bfa">forge agents <span style="color:var(--accent2)">[list|search|update|cleanup]</span></span>
             <button class="cbtn" onclick="copyLine(this,'forge agents list')">Kopiér</button>
           </div>
-          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">CLI-kommando: <span class="mono">list</span> kategorier, <span class="mono">search &lt;ord&gt;</span> efter agent-navn, <span class="mono">update</span> cachen, eller <span class="mono">cleanup</span> &aelig;ldre v3.6.2-projekter med agent-dubletter (kr&aelig;ver <span class="mono">--apply</span> for at slette).</div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">CLI-kommando: <span class="mono">list</span> viser kategorier med cache-dato og antal agents, <span class="mono">search &lt;ord&gt;</span> s&oslash;ger efter agent-navn, <span class="mono">update</span> opdaterer cachen og viser diff (tilf&oslash;jede/fjernede), eller <span class="mono">cleanup</span> rydder agent-dubletter (kr&aelig;ver <span class="mono">--apply</span>).</div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,rgba(52,211,153,.07),rgba(56,189,248,.03));border:1px solid rgba(52,211,153,.25);border-radius:10px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(52,211,153,.15)">
+            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#34d399">forge doctor</span>
+            <button class="cbtn" onclick="copyLine(this,'forge doctor')">Kopiér</button>
+          </div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Helbredstjek af Forge-installationen: PHP 8.1+, composer, git, sqlite3, hooks, settings.json, CLAUDE.md, .env og database. Printer ✓/⚠/✗ per check. CI-kompatibel &mdash; exit code 1 ved fejl.</div>
+        </div>
+
+        <div style="background:linear-gradient(135deg,rgba(56,189,248,.07),rgba(124,106,240,.03));border:1px solid rgba(56,189,248,.25);border-radius:10px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(56,189,248,.15)">
+            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--accent2)">forge design refresh</span>
+            <button class="cbtn" onclick="copyLine(this,'forge design refresh')">Kopiér</button>
+          </div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Genaf vikler DESIGN.md-valget i et eksisterende projekt. Vælg et nyt design system og bekr&aelig;ft &mdash; DESIGN.md overskrives og Claude bruger det nye system fra n&aelig;ste prompt.</div>
+        </div>
+
+        <div style="background:var(--surface);border:1px solid var(--bd);border-radius:10px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--bs)">
+            <span style="font-family:'Geist Mono',monospace;font-size:13px;color:var(--brand)">/project:session-end</span>
+            <button class="cbtn" onclick="copyLine(this,'/project:session-end')">Kopiér</button>
+          </div>
+          <div style="padding:10px 16px;font-size:12px;color:var(--ts);line-height:1.6">Claude skriver en narrativ opsummering af sessionen og gemmer den som <span class="mono">sessions/YYYY-MM-DD-HHMMSS.md</span>. DRAFT.md slettes. Kan tilf&oslash;je en personlig note f&oslash;r gemning.</div>
         </div>
 
       </div>
